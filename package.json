@@ -1,0 +1,36 @@
+{
+  "name": "jamesmichaelking.com",
+  "version": "1.0.0",
+  "description": "The website for jamesmichaelking.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmking/jamesmichaelking.com.git"
+  },
+  "keywords": [
+    "James",
+    "King"
+  ],
+  "author": "James King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmking/jamesmichaelking.com/issues"
+  },
+  "homepage": "https://github.com/jamesmking/jamesmichaelking.com#readme",
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.6"
+  }
+}
