@@ -1,36 +1,30 @@
 {
   "name": "jamesmichaelking.com",
   "version": "1.0.0",
-  "description": "The website for jamesmichaelking.com",
-  "main": "index.js",
+  "description": "jamesmichaelking.com",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": ""
+    "dev": "node server.js",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesmking/jamesmichaelking.com.git"
   },
-  "keywords": [
-    "James",
-    "King"
-  ],
-  "author": "James King",
+  "author": "James Michael King",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jamesmking/jamesmichaelking.com/issues"
   },
   "homepage": "https://github.com/jamesmking/jamesmichaelking.com#readme",
   "dependencies": {
-    "normalize-scss": "^7.0.1"
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-jshint": "^2.1.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.1",
-    "jshint": "^2.9.6"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "gulp-babel": "^8.0.0"
   }
 }
