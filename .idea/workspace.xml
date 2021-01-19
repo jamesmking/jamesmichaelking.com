@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56d81fa6-285d-495c-bd53-22ac15707666" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/core/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/_width-container.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings/_spacing.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/_all.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/_template.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/_template.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/_all.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/_all.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/_all.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/_typography.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +171,7 @@
       <workItem from="1539680398896" duration="12000" />
       <workItem from="1539781212579" duration="4724000" />
       <workItem from="1610465518916" duration="7447000" />
-      <workItem from="1610545208692" duration="7343000" />
+      <workItem from="1610545208692" duration="8059000" />
     </task>
     <servers />
   </component>
