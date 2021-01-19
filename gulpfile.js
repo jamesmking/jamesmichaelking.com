@@ -16,7 +16,7 @@ const paths = {
 const sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
-  includePaths: [],
+  includePaths: ['./node_modules/sass-mq/'],
 };
 
 gulp.task('watch-scss', () => gulp

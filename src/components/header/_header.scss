@@ -1,9 +1,16 @@
 .header {
   background: $blue-dark;
-  padding: 20px 0;
+  padding: 100px 0 20px;
+  @include mq(tablet) {
+    padding-top: 180px;
+  }
 }
 
 .header__site-name {
   color: #fff;
   margin: 0;
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.02em;
 }
