@@ -9,28 +9,12 @@
   border-bottom: 5px solid $grey-light;
 }
 
-.heading-small {
-
-}
-
-.heading-medium {
-
-}
-
-.heading-large {
-
-}
-
-.heading-xlarge {
-
-}
-
 .body-text {
   font-family: $body-font-family;
-  line-height: 1.35em;
+  line-height: 1.4em;
   font-size: 14px;
   font-weight: 400;
-  color: #444;
+  color: #fff;
   margin-top: 1em;
   margin-bottom: 1em;
   @include mq(tablet) {
