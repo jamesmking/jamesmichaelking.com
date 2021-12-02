@@ -1,0 +1,32 @@
+
+.heading-small,
+.heading-medium,
+.heading-large,
+.heading-xlarge {
+  font-family: $heading-font-family;
+  font-weight: 400;
+  padding-bottom: 10px;
+  border-bottom: 5px solid $grey-light;
+}
+
+.body-text {
+  font-family: $body-font-family;
+  line-height: 1.4em;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  @include mq(tablet) {
+    font-size: 16px;
+  }
+}
+
+.body-text-lead {
+  @extend .body-text;
+  font-size: 16px;
+  margin-top: 0;
+  @include mq(tablet) {
+    font-size: 19px;
+  }
+}

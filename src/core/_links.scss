@@ -1,0 +1,15 @@
+.link {
+  color: #fff;
+  text-decoration: underline;
+
+  &:hover {
+    color: #ccc;
+  }
+
+  &:focus {
+    outline: 3px solid yellow;
+    background: yellow;
+    color: #000;
+  }
+}
+

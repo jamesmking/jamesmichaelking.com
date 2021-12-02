@@ -1,0 +1,25 @@
+.grid-row {
+  @include clearfix;
+  margin-left: - ($space);
+  margin-right: - ($space);
+}
+
+.grid-column-one-quarter {
+  @include grid-column(25%);
+}
+
+.grid-column-one-third {
+  @include grid-column(33.33%);
+}
+
+.grid-column-one-half {
+  @include grid-column(50%);
+}
+
+.grid-column-two-thirds {
+  @include grid-column(66.66%);
+}
+
+.grid-column-three-quarters {
+  @include grid-column(75%);
+}

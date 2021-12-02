@@ -1,2 +1,0 @@
-# jamesmichaelking.com
-My website 

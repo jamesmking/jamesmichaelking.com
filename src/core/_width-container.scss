@@ -1,0 +1,7 @@
+.width-container {
+  padding: 0 $space;
+  @include mq(tablet) {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+}

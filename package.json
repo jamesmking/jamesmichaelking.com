@@ -1,0 +1,31 @@
+{
+  "name": "jamesmichaelking.com",
+  "version": "1.0.0",
+  "description": "jamesmichaelking.com",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmking/jamesmichaelking.com.git"
+  },
+  "author": "James Michael King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmking/jamesmichaelking.com/issues"
+  },
+  "homepage": "https://github.com/jamesmking/jamesmichaelking.com#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "sass-mq": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "gulp-babel": "^8.0.0"
+  }
+}
