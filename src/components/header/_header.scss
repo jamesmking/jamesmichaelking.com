@@ -1,6 +1,6 @@
 .header {
   background: $blue-dark;
-  padding: 100px 0 20px;
+  padding: 60px 0 $space;
   @include mq(tablet) {
     padding-top: 180px;
   }
@@ -9,8 +9,20 @@
 .header__site-name {
   color: #fff;
   margin: 0;
-  font-family: $font-family;
-  font-weight: 500;
-  font-size: 24px;
-  letter-spacing: -0.02em;
+  font-family: $heading-font-family;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.05em;
+  @include mq(tablet) {
+    font-size: 30px;
+  }
+}
+
+.header__strapline {
+  margin: .5em 0 0;
+  color: $grey-mid;
+  font-family: $heading-font-family;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.05em;
 }
