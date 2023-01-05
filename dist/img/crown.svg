@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 240 114" style="enable-background:new 0 0 240 114;" xml:space="preserve">
+<style type="text/css">
+	.bg{fill:#fff;}
+</style>
+	<rect x="82.29" y="16.29" transform="matrix(0.7071 0.7071 -0.7071 0.7071 73.331 -69.0366)" class="bg" width="75.42" height="75.42"/>
+	<polygon class="bg" points="60,60.67 6.67,114 113.33,114 	"/>
+	<polygon class="bg" points="180,60.67 126.67,114 233.33,114 	"/>
+	<polygon class="bg" points="186.67,54 240,107.33 240,0.67 	"/>
+	<polygon class="bg" points="53.33,54 0,0.67 0,107.33 	"/>
+</svg>

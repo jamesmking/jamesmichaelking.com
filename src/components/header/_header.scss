@@ -1,9 +1,23 @@
+@use "mq";
+
 .header {
-  background: $blue-dark;
   padding: 60px 0 $space;
-  @include mq(tablet) {
+  @include mq.mq(tablet) {
     padding-top: 180px;
   }
+}
+
+.header__logo {
+  margin-bottom: 50px;
+  display: inline-block;
+  @include mq.mq(tablet) {
+    margin-bottom: 100px;
+  }
+}
+
+.header__logo-img {
+  display: inline-block;
+  height: 30px;
 }
 
 .header__site-name {
@@ -12,7 +26,7 @@
   font-family: $heading-font-family;
   font-size: 30px;
   font-weight: 500;
-  @include mq(tablet) {
+  @include mq.mq(tablet) {
     font-size: 36px;
   }
 }
@@ -22,7 +36,7 @@
   font-family: $heading-font-family;
   font-size: 16px;
   color: #fff;
-  @include mq(tablet) {
+  @include mq.mq(tablet) {
     font-size: 19px;
   }
 }

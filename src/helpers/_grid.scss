@@ -1,7 +1,9 @@
+@use "mq";
+
 @mixin grid-column($width: 100%) {
   padding: 0 $space;
   box-sizing: border-box;
-  @include mq($from: tablet) {
+  @include mq.mq($from: tablet) {
     float: left;
     width: $width
   }
