@@ -130,3 +130,20 @@
     font-size: 19px;
   }
 }
+
+/* Footer */
+
+.footer {
+  padding-bottom: calc(var(--space) * 2);
+}
+
+.footer__legal {
+  line-height: 1.4em;
+  font-size: 14px;
+  color: var(--colour-text);
+  margin: var(--space) 0 0;
+
+  @media (min-width: 46.25em) {
+    font-size: 16px;
+  }
+}
