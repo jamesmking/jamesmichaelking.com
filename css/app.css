@@ -4,17 +4,13 @@
   --colour-background: #fff;
   --colour-focus: lightblue;
 
-  /* The crown is three overlapping shapes whose colours add together like
-     light: red and green make the yellow, green and blue make the cyan. */
-  --colour-red: #e14d00;
-  --colour-green: #007b38;
-  --colour-blue: #24399b;
+  --colour-red: #ed0600;
+  --colour-green: #20ce55;
+  --colour-blue: #003eba;
 
   --space: 30px;
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* The poster keeps the proportions of the keyfob artwork, 641 x 939. Its
-     width drives the artwork, the name and the spacing of the text column. */
   --poster-width: 100vw;
   --poster-height: calc(var(--poster-width) * 939 / 641);
 
@@ -65,11 +61,6 @@
   }
 }
 
-/* The crown is drawn in CSS. A red and a blue triangle sit side by side with a
-   green shape laid over both, and the whole group is clipped to cut the notch
-   out of the bottom. Clipping also keeps the blending inside the crown, so the
-   colours never mix with the paper behind. */
-
 .poster__crown {
   position: absolute;
   top: calc(var(--poster-width) * 0.187);
@@ -85,23 +76,63 @@
     inset: 0;
   }
 
-  /* Red on the left and blue on the right, meeting at the centre point. */
   &::before {
+    --crown-red: var(--colour-red);
+    --crown-blue: var(--colour-blue);
     clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
     background: linear-gradient(
       to right,
-      var(--colour-red) 50%,
-      var(--colour-blue) 0
+      var(--crown-red) 50%,
+      var(--crown-blue) 0
     );
   }
 
-  /* Green over the top. "screen" is the fallback for browsers without
-     "plus-lighter". */
   &::after {
     clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
     background: var(--colour-green);
     mix-blend-mode: screen;
-    mix-blend-mode: plus-lighter;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &::before {
+      animation:
+        crown-red 0.3s ease-out 0.6s backwards,
+        crown-blue 0.3s ease-out 1s backwards;
+    }
+
+    &::after {
+      animation: crown-green 0.3s ease-out 0.8s backwards;
+    }
+  }
+}
+
+@property --crown-red {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --crown-blue {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@keyframes crown-red {
+  from {
+    --crown-red: transparent;
+  }
+}
+
+@keyframes crown-blue {
+  from {
+    --crown-blue: transparent;
+  }
+}
+
+@keyframes crown-green {
+  from {
+    opacity: 0;
   }
 }
 
@@ -111,16 +142,10 @@
   bottom: 7.8%;
   margin: 0;
   font-size: calc(var(--poster-width) * 0.21);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: -0.035em;
 }
-
-/* Content */
-
-/* On tablet and up the text column is as tall as the poster: the lead starts
-   level with the top of the artwork and the legal line ends on the baseline
-   of the name. */
 
 .content {
   display: flex;
