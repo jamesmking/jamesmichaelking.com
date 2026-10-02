@@ -4,7 +4,6 @@ Static site for James Michael King Ltd. There is no build step: the HTML and
 CSS in this repository are served as they are.
 
 - `index.html` – home page
-- `cv.html` – CV, with print styles
 - `css/app.css` – all styles, written as plain CSS (custom properties and native
   nesting)
 - `img/crown.svg` – logo and favicon
