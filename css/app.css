@@ -1,6 +1,5 @@
 :root {
   --colour-text: #100f15;
-  --colour-border: #b6b0bc;
   --colour-background: #dcd6d2;
   --space: 30px;
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -54,40 +53,11 @@
   }
 }
 
-.grid-column-one-quarter {
-  grid-column: span 3;
-}
-
-.grid-column-one-third {
-  grid-column: span 4;
-}
-
-.grid-column-two-thirds {
-  grid-column: span 8;
-}
-
 .grid-column-three-quarters {
   grid-column: span 9;
 }
 
 /* Typography */
-
-.heading-medium {
-  font-weight: 500;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--colour-border);
-
-  @media (min-width: 46.25em) {
-    border-top: 2px solid var(--colour-border);
-    border-bottom: none;
-    margin-top: 1em;
-    padding-top: 0.3em;
-  }
-
-  @media print {
-    font-size: 19px;
-  }
-}
 
 .body-text,
 .body-text-lead {
@@ -115,12 +85,6 @@
   }
 }
 
-abbr {
-  text-decoration: none;
-  border-bottom: 1px dotted var(--colour-border);
-  cursor: help;
-}
-
 .link {
   color: var(--colour-text);
   text-decoration: none;
@@ -135,46 +99,6 @@ abbr {
     background: yellow;
     border: none;
     color: #000;
-  }
-}
-
-/* Tag list */
-
-.list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  padding: 0;
-  margin: 1.5em 0 3em;
-
-  @media print {
-    margin: 1em 0 2em;
-  }
-}
-
-.list__item {
-  padding: 0.5em 0.7em;
-  line-height: 1;
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 1em;
-  border: 1px solid transparent;
-
-  @media print {
-    border: 1px solid #eee;
-    background: #f5f5f5;
-    font-size: 14px;
-    padding: 0.4em 0.7em 0.5em;
-  }
-}
-
-.list__item--stronger {
-  background: rgba(255, 255, 255, 0.8);
-
-  @media print {
-    border: 1px solid #ddd;
-    background: #ddd;
   }
 }
 
@@ -226,76 +150,5 @@ abbr {
 
   @media print {
     margin-top: 0.25em;
-  }
-}
-
-@media print {
-  .header-print-row {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .header-print-contact {
-    text-align: right;
-    margin-left: auto;
-
-    .body-text {
-      margin: 0;
-    }
-  }
-}
-
-/* Role (CV) */
-
-.role {
-  border-bottom: 1px solid var(--colour-border);
-}
-
-.role__heading {
-  font-weight: 500;
-  margin-bottom: 0;
-  break-after: avoid;
-}
-
-.role__meta {
-  font-size: 14px;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75em;
-  padding: 0;
-  margin: 0.5em 0 1em;
-  break-after: avoid;
-
-  @media (min-width: 46.25em) {
-    font-size: 16px;
-  }
-}
-
-.role__meta-item {
-  &::after {
-    content: "|";
-    margin-left: 0.75em;
-    color: var(--colour-border);
-  }
-
-  &:last-child::after {
-    content: "";
-  }
-}
-
-.role__description {
-  line-height: 1.4em;
-  font-size: 14px;
-  color: var(--colour-text);
-  margin-top: 1em;
-  margin-bottom: 1em;
-
-  @media (min-width: 46.25em) {
-    font-size: 16px;
-  }
-
-  p {
-    break-inside: avoid;
   }
 }
