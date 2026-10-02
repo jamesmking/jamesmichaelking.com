@@ -1,8 +1,26 @@
 :root {
-  --colour-text: #100f15;
-  --colour-background: #dcd6d2;
+  --colour-text: #1d1d1b;
+  --colour-paper: #dee3d4;
+  --colour-background: #fff;
+  --colour-focus: lightblue;
+
+  /* The crown is three overlapping shapes whose colours add together like
+     light: red and green make the yellow, green and blue make the cyan. */
+  --colour-red: #e14d00;
+  --colour-green: #007b38;
+  --colour-blue: #24399b;
+
   --space: 30px;
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* The poster keeps the proportions of the keyfob artwork, 641 x 939. Its
+     width drives the artwork, the name and the spacing of the text column. */
+  --poster-width: 100vw;
+  --poster-height: calc(var(--poster-width) * 939 / 641);
+
+  @media (min-width: 46.25em) {
+    --poster-width: min(50vw, calc(100vh * 641 / 939));
+  }
 }
 
 /* The one breakpoint, "tablet and up", is 46.25em (740px). */
@@ -17,34 +35,112 @@
 .template__body {
   margin: 0;
   font-family: var(--font-family);
-}
+  color: var(--colour-text);
 
-.main {
-  padding-top: var(--space);
-  padding-bottom: var(--space);
-}
-
-.width-container {
-  padding: 0 var(--space);
-
-  @media (min-width: 46.25em) {
-    margin: 0 auto;
-    max-width: 900px;
-  }
-}
-
-/* Grid */
-
-.grid-row {
   @media (min-width: 46.25em) {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: calc(var(--space) * 2);
+    grid-template-columns: var(--poster-width) 1fr;
+    min-height: 100vh;
+    background: linear-gradient(
+      to right,
+      var(--colour-paper) var(--poster-width),
+      transparent 0
+    );
   }
 }
 
-.grid-column-three-quarters {
-  grid-column: span 9;
+/* Poster */
+
+.poster {
+  position: relative;
+  width: var(--poster-width);
+  height: var(--poster-height);
+  background: var(--colour-paper);
+  overflow: hidden;
+
+  @media (min-width: 46.25em) {
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+}
+
+/* The crown is drawn in CSS. A red and a blue triangle sit side by side with a
+   green shape laid over both, and the whole group is clipped to cut the notch
+   out of the bottom. Clipping also keeps the blending inside the crown, so the
+   colours never mix with the paper behind. */
+
+.poster__crown {
+  position: absolute;
+  top: calc(var(--poster-width) * 0.187);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 50%, 0 100%);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Red on the left and blue on the right, meeting at the centre point. */
+  &::before {
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    background: linear-gradient(
+      to right,
+      var(--colour-red) 50%,
+      var(--colour-blue) 0
+    );
+  }
+
+  /* Green over the top. "screen" is the fallback for browsers without
+     "plus-lighter". */
+  &::after {
+    clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
+    background: var(--colour-green);
+    mix-blend-mode: screen;
+    mix-blend-mode: plus-lighter;
+  }
+}
+
+.poster__name {
+  position: absolute;
+  left: 10%;
+  bottom: 7.8%;
+  margin: 0;
+  font-size: calc(var(--poster-width) * 0.21);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+/* Content */
+
+/* On tablet and up the text column is as tall as the poster: the lead starts
+   level with the top of the artwork and the legal line ends on the baseline
+   of the name. */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(var(--space) * 2);
+  padding: calc(var(--space) * 1.5) var(--space);
+
+  @media (min-width: 46.25em) {
+    box-sizing: border-box;
+    align-self: start;
+    min-height: var(--poster-height);
+    padding: calc(var(--poster-width) * 0.187) clamp(var(--space), 6vw, 96px)
+      calc(var(--poster-width) * 0.134);
+  }
+}
+
+.main,
+.footer {
+  max-width: 600px;
 }
 
 /* Typography */
@@ -53,7 +149,6 @@
 .body-text-lead {
   line-height: 1.4em;
   font-size: 16px;
-  color: var(--colour-text);
   margin-top: 1em;
   margin-bottom: 1em;
 
@@ -68,6 +163,7 @@
 
   @media (min-width: 46.25em) {
     font-size: 24px;
+    margin-top: -0.3em;
   }
 }
 
@@ -81,67 +177,19 @@
   }
 
   &:focus {
-    outline: 3px solid yellow;
-    background: yellow;
+    outline: 3px solid var(--colour-focus);
+    background: var(--colour-focus);
     border: none;
     color: #000;
   }
 }
 
-/* Header */
-
-.header {
-  padding: 60px 0 var(--space);
-
-  @media (min-width: 46.25em) {
-    padding-top: 180px;
-  }
-}
-
-.header__logo {
-  margin-bottom: 50px;
-  display: inline-block;
-
-  @media (min-width: 46.25em) {
-    margin-bottom: 100px;
-  }
-}
-
-.header__logo-img {
-  display: inline-block;
-  height: 30px;
-}
-
-.header__site-name {
-  color: var(--colour-text);
-  margin: 0;
-  font-size: calc(1.4rem + 2vw);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  word-spacing: -0.1em;
-}
-
-.header__strapline {
-  margin: 0.5em 0 0;
-  font-size: 16px;
-  color: var(--colour-text);
-
-  @media (min-width: 46.25em) {
-    font-size: 19px;
-  }
-}
-
 /* Footer */
-
-.footer {
-  padding-bottom: calc(var(--space) * 2);
-}
 
 .footer__legal {
   line-height: 1.4em;
   font-size: 14px;
-  color: var(--colour-text);
-  margin: var(--space) 0 0;
+  margin: 0;
 
   @media (min-width: 46.25em) {
     font-size: 16px;
