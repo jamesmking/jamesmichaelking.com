@@ -2,7 +2,6 @@
 
 ## Structure
 
-
 Each folder has its own entry point (`_all.scss`).
 
 ## Settings

@@ -1,0 +1,36 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  font-family: $heading-font-family;
+  font-weight: 400;
+  padding: 0;
+  margin: 1.5em 0 3em;
+  @media print {
+    margin: 1em 0 2em;
+  }
+}
+
+.list__item {
+  padding: 0.5em 0.7em;
+  line-height: 1;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1em;
+  border: 1px solid transparent;
+  @media print {
+    border: 1px solid #eee;
+    background: #f5f5f5;
+    font-size: 14px;
+    padding: 0.4em 0.7em 0.5em;
+  }
+}
+
+.list__item--stronger {
+  background: rgba(255, 255, 255, 0.8);
+  @media print {
+    border: 1px solid #ddd;
+    background: #ddd;
+  }
+}

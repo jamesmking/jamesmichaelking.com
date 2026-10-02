@@ -5,6 +5,6 @@
   box-sizing: border-box;
   @include mq.mq($from: tablet) {
     float: left;
-    width: $width
+    width: $width;
   }
 }

@@ -21,22 +21,41 @@
 }
 
 .header__site-name {
-  color: #fff;
+  color: $blue-dark;
   margin: 0;
   font-family: $heading-font-family;
-  font-size: 30px;
+  font-size: calc(1.4rem + 2vw);
   font-weight: 500;
-  @include mq.mq(tablet) {
-    font-size: 36px;
-  }
+  letter-spacing: -0.02em;
+  word-spacing: -0.1em;
 }
 
 .header__strapline {
-  margin: .5em 0 0;
+  margin: 0.5em 0 0;
   font-family: $heading-font-family;
   font-size: 16px;
-  color: #fff;
+  color: $blue-dark;
   @include mq.mq(tablet) {
     font-size: 19px;
+  }
+  @media print {
+    margin-top: 0.25em;
+  }
+}
+
+@media print {
+  .header-print-row {
+    display: flex;
+    align-items: flex-start;
+  }
+  .header__site-name {
+    font-size: 32px;
+  }
+  .header-print-contact {
+    text-align: right;
+    margin-left: auto;
+    .body-text {
+      margin: 0;
+    }
   }
 }

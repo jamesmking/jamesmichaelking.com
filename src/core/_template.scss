@@ -1,15 +1,21 @@
-
 .template {
-  background: $blue-dark;
+  background: #dcd6d2;
   -webkit-font-smoothing: antialiased;
+  @media print {
+    background: white;
+    color: #333;
+  }
 }
 
 .template__body {
   margin: 0;
-  background-image: linear-gradient(0deg, $blue-dark 0%, #4d5b6a 100%)
 }
 
 .main {
   padding-top: $space;
   padding-bottom: $space;
+  @media print {
+    padding: 0;
+    margin-bottom: 50px;
+  }
 }
