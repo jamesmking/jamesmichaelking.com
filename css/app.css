@@ -1,0 +1,222 @@
+:root {
+  --colour-text: #1d1d1b;
+  --colour-paper: #dee3d4;
+  --colour-background: #fff;
+  --colour-focus: lightblue;
+
+  --colour-red: #ed0600;
+  --colour-green: #20ce55;
+  --colour-blue: #003eba;
+
+  --space: 30px;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --poster-width: 100vw;
+  --poster-height: calc(var(--poster-width) * 939 / 641);
+
+  @media (min-width: 46.25em) {
+    --poster-width: min(50vw, calc(100vh * 641 / 939));
+  }
+}
+
+/* The one breakpoint, "tablet and up", is 46.25em (740px). */
+
+/* Template */
+
+.template {
+  background: var(--colour-background);
+  -webkit-font-smoothing: antialiased;
+}
+
+.template__body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--colour-text);
+
+  @media (min-width: 46.25em) {
+    display: grid;
+    grid-template-columns: var(--poster-width) 1fr;
+    min-height: 100vh;
+    background: linear-gradient(
+      to right,
+      var(--colour-paper) var(--poster-width),
+      transparent 0
+    );
+  }
+}
+
+/* Poster */
+
+.poster {
+  position: relative;
+  width: var(--poster-width);
+  height: var(--poster-height);
+  background: var(--colour-paper);
+  overflow: hidden;
+
+  @media (min-width: 46.25em) {
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+}
+
+.poster__crown {
+  position: absolute;
+  top: calc(var(--poster-width) * 0.187);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 50%, 0 100%);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  &::before {
+    --crown-red: var(--colour-red);
+    --crown-blue: var(--colour-blue);
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    background: linear-gradient(
+      to right,
+      var(--crown-red) 50%,
+      var(--crown-blue) 0
+    );
+  }
+
+  &::after {
+    clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
+    background: var(--colour-green);
+    mix-blend-mode: screen;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &::before {
+      animation:
+        crown-red 0.3s ease-out 0.6s backwards,
+        crown-blue 0.3s ease-out 1s backwards;
+    }
+
+    &::after {
+      animation: crown-green 0.3s ease-out 0.8s backwards;
+    }
+  }
+}
+
+@property --crown-red {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --crown-blue {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@keyframes crown-red {
+  from {
+    --crown-red: transparent;
+  }
+}
+
+@keyframes crown-blue {
+  from {
+    --crown-blue: transparent;
+  }
+}
+
+@keyframes crown-green {
+  from {
+    opacity: 0;
+  }
+}
+
+.poster__name {
+  position: absolute;
+  left: 10%;
+  bottom: 7.8%;
+  margin: 0;
+  font-size: calc(var(--poster-width) * 0.21);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(var(--space) * 2);
+  padding: calc(var(--space) * 1.5) var(--space);
+
+  @media (min-width: 46.25em) {
+    box-sizing: border-box;
+    align-self: start;
+    min-height: var(--poster-height);
+    padding: calc(var(--poster-width) * 0.187) clamp(var(--space), 6vw, 96px)
+      calc(var(--poster-width) * 0.134);
+  }
+}
+
+.main,
+.footer {
+  max-width: 600px;
+}
+
+/* Typography */
+
+.body-text,
+.body-text-lead {
+  line-height: 1.4em;
+  font-size: 16px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  @media (min-width: 46.25em) {
+    font-size: 19px;
+  }
+}
+
+.body-text-lead {
+  font-size: 19px;
+  margin-top: 0;
+
+  @media (min-width: 46.25em) {
+    font-size: 24px;
+    margin-top: -0.3em;
+  }
+}
+
+.link {
+  color: var(--colour-text);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+
+  &:hover {
+    border-bottom-width: 3px;
+  }
+
+  &:focus {
+    outline: 3px solid var(--colour-focus);
+    background: var(--colour-focus);
+    border: none;
+    color: #000;
+  }
+}
+
+/* Footer */
+
+.footer__legal {
+  line-height: 1.4em;
+  font-size: 14px;
+  margin: 0;
+
+  @media (min-width: 46.25em) {
+    font-size: 16px;
+  }
+}
