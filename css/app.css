@@ -3,7 +3,7 @@
   --colour-border: #b6b0bc;
   --colour-background: #dcd6d2;
   --space: 30px;
-  --font-family: Helvetica Neue, Helvetica, Arial;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* The one breakpoint, "tablet and up", is 46.25em (740px). */
@@ -22,6 +22,7 @@
 
 .template__body {
   margin: 0;
+  font-family: var(--font-family);
 }
 
 .main {
@@ -46,50 +47,32 @@
 /* Grid */
 
 .grid-row {
-  margin-left: calc(var(--space) * -1);
-  margin-right: calc(var(--space) * -1);
-
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-}
-
-.grid-column-one-quarter,
-.grid-column-one-third,
-.grid-column-two-thirds,
-.grid-column-three-quarters {
-  padding: 0 var(--space);
-  box-sizing: border-box;
-
   @media (min-width: 46.25em) {
-    float: left;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: calc(var(--space) * 2);
   }
 }
 
-@media (min-width: 46.25em) {
-  .grid-column-one-quarter {
-    width: 25%;
-  }
+.grid-column-one-quarter {
+  grid-column: span 3;
+}
 
-  .grid-column-one-third {
-    width: 33.33%;
-  }
+.grid-column-one-third {
+  grid-column: span 4;
+}
 
-  .grid-column-two-thirds {
-    width: 66.66%;
-  }
+.grid-column-two-thirds {
+  grid-column: span 8;
+}
 
-  .grid-column-three-quarters {
-    width: 75%;
-  }
+.grid-column-three-quarters {
+  grid-column: span 9;
 }
 
 /* Typography */
 
 .heading-medium {
-  font-family: var(--font-family);
   font-weight: 500;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--colour-border);
@@ -108,10 +91,8 @@
 
 .body-text,
 .body-text-lead {
-  font-family: var(--font-family);
   line-height: 1.4em;
   font-size: 16px;
-  font-weight: 400;
   color: var(--colour-text);
   margin-top: 1em;
   margin-bottom: 1em;
@@ -164,8 +145,6 @@ abbr {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-  font-family: var(--font-family);
-  font-weight: 400;
   padding: 0;
   margin: 1.5em 0 3em;
 
@@ -226,7 +205,6 @@ abbr {
 .header__site-name {
   color: var(--colour-text);
   margin: 0;
-  font-family: var(--font-family);
   font-size: calc(1.4rem + 2vw);
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -239,7 +217,6 @@ abbr {
 
 .header__strapline {
   margin: 0.5em 0 0;
-  font-family: var(--font-family);
   font-size: 16px;
   color: var(--colour-text);
 
@@ -275,14 +252,12 @@ abbr {
 }
 
 .role__heading {
-  font-family: var(--font-family);
   font-weight: 500;
   margin-bottom: 0;
+  break-after: avoid;
 }
 
 .role__meta {
-  font-family: var(--font-family);
-  font-weight: 400;
   font-size: 14px;
   list-style: none;
   display: flex;
@@ -290,6 +265,7 @@ abbr {
   gap: 0.75em;
   padding: 0;
   margin: 0.5em 0 1em;
+  break-after: avoid;
 
   @media (min-width: 46.25em) {
     font-size: 16px;
@@ -309,10 +285,8 @@ abbr {
 }
 
 .role__description {
-  font-family: var(--font-family);
   line-height: 1.4em;
   font-size: 14px;
-  font-weight: 400;
   color: var(--colour-text);
   margin-top: 1em;
   margin-bottom: 1em;
@@ -320,12 +294,8 @@ abbr {
   @media (min-width: 46.25em) {
     font-size: 16px;
   }
-}
 
-/* Print */
-
-@media print {
-  .page-break {
-    page-break-before: always;
+  p {
+    break-inside: avoid;
   }
 }
